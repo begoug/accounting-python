@@ -124,4 +124,18 @@ def load_invoice(invoice_id, dir_=None):
         invoice = pickle.load(f)
     return invoice
 
+def next_client_id(curr_id=None):
+    curr_ind = 0
+    if curr_id is not None:
+        curr_ind = int(curr_id.split('CL')[-1])
+    out = 'CL{0:04d}'.format(curr_ind+1)
+    return out
 
+def append_client_to_db(clients, new_client):
+    try:
+        new_client.id_ = next_client_id(curr_id=clients[-1].id_)
+    except IndexError:
+        # database was empty
+        new_client.id_ = next_client_id()
+    clients.append(new_client)
+    print(clients)
