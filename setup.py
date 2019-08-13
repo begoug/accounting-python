@@ -63,6 +63,10 @@ cmdclass = {}
 
 with open('README.txt', 'r') as f:
     readme = f.read()
+
+all_packages = setuptools.find_packages()
+print(all_packages)
+
 setuptools.setup(name='accounting',
       version=get_version(),
       maintainer=u'Guillaume Bégou',
@@ -72,7 +76,7 @@ setuptools.setup(name='accounting',
               'A set of accounting and invoicing tools written in python.',
       long_description=readme,
       license='GPL',
-      packages=['accounting'],
+      packages=all_packages,
       package_data={'accounting': []},
       classifiers=[
               'Development Status :: 4 - Beta',
