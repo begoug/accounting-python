@@ -1,0 +1,4 @@
+Command lines
+=============
+.. automodule :: accounting.command_line
+  :members:
