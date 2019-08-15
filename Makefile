@@ -2,7 +2,10 @@ all:build install_user
 
 .PHONY:build
 build:
-	python3.7 setup.py bdist_wheel
+	cd source && python3.7 setup.py bdist_wheel
 
 install_user:
-	pip3.7 install --user --upgrade dist/*.whl
+	cd source && pip3.7 install --user --upgrade dist/*.whl
+
+doc:
+	cd docs && make html
