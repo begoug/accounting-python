@@ -2,11 +2,11 @@ API documentation
 =================
 
 .. toctree::
-   :maxdepth: 3
-   :caption: Contents:
+    :maxdepth: 3
+    :caption: Contents:
 
-  command_lines.rst
   utils.rst
-  client/*
-  invoicing/*
+  command_line.rst
+  client/index.rst
+  invoicing/index.rst
 

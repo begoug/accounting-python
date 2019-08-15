@@ -46,6 +46,11 @@ class PathCompleter():  # Custom completer
         sys.stdout.flush()
 
 def create_client():
+    """Command line method to create client
+
+    Use: accounting-create-client
+    User is then asked to provide a client database, and a client name.
+    """
     completer = PathCompleter()
     readline.set_completer_delims(' \t\n;')
     readline.set_completer(completer.complete)
