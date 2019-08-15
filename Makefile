@@ -8,4 +8,7 @@ install_user:
 	cd source && pip3.7 install --user --upgrade dist/*.whl
 
 doc:
-	cd docs && make html
+	cd docsource && make html
+
+gitpage:
+	rm -rf docs/* && cp -r docsource/build/html/* docs
