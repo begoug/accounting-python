@@ -45,18 +45,22 @@ class PathCompleter():  # Custom completer
         print(line_buffer, end="")
         sys.stdout.flush()
 
+class DirPathCompleter(PathCompleter):
+    pass
+
+
 def create_client():
     """Command line method to create client
 
     Use: accounting-create-client
-    User is then asked to provide a client database, and a client name.
+    User is then asked to provide a client database folder, and a client name.
     """
-    completer = PathCompleter()
+    completer = DirPathCompleter()
     readline.set_completer_delims(' \t\n;')
     readline.set_completer(completer.complete)
     readline.parse_and_bind('tab: complete')
     readline.set_completion_display_matches_hook(completer.display_matches)
-    print('Enter a client database name\n\t')
+    print('Enter a client database folder\n\t')
     db_path = input("> ")
     db_extension = '.pickle'
     if not os.path.exists(db_path):

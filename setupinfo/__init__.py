@@ -8,6 +8,10 @@ curr_dir = os.path.dirname(os.path.abspath(__file__))
 root = os.path.join(curr_dir, '..')
 version_file = os.path.join(root, 'VERSION.txt')
 readme_file  =  os.path.join(root, 'README.md')
+docsite = 'https://begoug.github.io/accounting-python'
+
+def get_website():
+    return docsite
 
 def get_version():
     """

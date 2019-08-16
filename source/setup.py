@@ -18,6 +18,7 @@ cmdclass = {}
 
 version = setupinfo.get_version()
 readme = setupinfo.get_readme()
+website = setupinfo.get_website()
 
 pkg_name = 'accounting'
 all_packages = setuptools.find_packages()
@@ -34,9 +35,11 @@ entry_points = {
 setuptools.setup(
     name=pkg_name,
     version=version,
+    author=u'Guillaume Bégou',
+    author_email='begou.guillaume@gmail.com',
     maintainer=u'Guillaume Bégou',
     maintainer_email='begou.guillaume@gmail.com',
-    url='https://github.com/begoug/accounting-python',
+    url=website,
     description= 'A set of accounting and invoicing tools written in python.',
     long_description=readme,
     license='GPL',
